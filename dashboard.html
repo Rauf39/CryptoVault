@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CryptoVault - Dashboard</title>
+</head>
+<body>
+    <h2>🔑 Your Vault</h2>
+    <form method="POST">
+        <input type="text" name="account" placeholder="Account" required>
+        <input type="text" name="password" placeholder="Password" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h3>Stored Accounts:</h3>
+    <ul>
+        {% for account, pwd in vault.items() %}
+        <li>{{ account }} → {{ pwd }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
